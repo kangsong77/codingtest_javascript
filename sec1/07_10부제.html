@@ -1,0 +1,35 @@
+<html>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            //나의 답
+            function solution(day, arr){
+                let answer = 0;
+                for(let item of arr){
+                    let num2 = Math.floor(item/10) * 10; //10의 자리
+
+                    let num1 = item - num2; //1의 자리
+
+                    if( num1 === day) answer++;    
+                }
+                return answer;
+            }
+            //정답
+            function solution_correct(day, arr){
+                let answer=0;
+                for(let x of arr){
+                    if(x%10==day) answer++;
+                }
+                
+                return answer;
+            }
+            arr=[25, 23, 11, 47, 53, 17, 33];
+            console.log(solution(7, arr));
+            console.log(solution_correct(7, arr));
+        </script>
+    </body>
+</html>
